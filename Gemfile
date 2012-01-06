@@ -1,11 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.0.rc1'
+gem 'rake'
+gem 'execjs'
+gem 'paperclip', '~> 2.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'haml'
 
 
 # Gems used only for assets and not required
@@ -17,7 +21,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'therubyracer'
+end
+
+
 gem 'jquery-rails'
+gem 'fancybox-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -33,3 +43,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', '~> 0.8.3', :require => false
+end
+
+gem 'will_paginate'
